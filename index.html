@@ -2,95 +2,130 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>51权益卡密自助领取平台</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>51权益卡密领取</title>
 
 <style>
+
 *{
- margin:0;
- padding:0;
- box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
- background:#0868e8;
- font-family:"Microsoft YaHei";
+background:#0868e8;
+font-family:"Microsoft YaHei";
 }
 
 .container{
- max-width:520px;
- margin:auto;
- position:relative;
+width:100%;
+max-width:520px;
+margin:auto;
+position:relative;
 }
 
 .banner{
- width:100%;
- display:block;
+width:100%;
+display:block;
 }
 
+
+/* 输入区域 */
+
 .form{
- position:absolute;
- top:55%;
- width:100%;
- padding:0 8%;
+
+position:absolute;
+
+top:56%;
+
+left:8%;
+
+width:84%;
+
 }
 
 
 input{
- width:100%;
- height:52px;
- border-radius:30px;
- border:none;
- padding-left:25px;
- font-size:16px;
- margin-bottom:15px;
+
+width:100%;
+height:50px;
+border-radius:30px;
+border:none;
+padding-left:25px;
+font-size:16px;
+margin-bottom:15px;
+
 }
 
 
 .code-box{
- display:flex;
- gap:10px;
+
+display:flex;
+gap:10px;
+
 }
 
 
 .code-box input{
- flex:1;
+
+width:65%;
+
 }
 
 
 .code-btn{
- width:130px;
- border-radius:30px;
- border:none;
- background:#ff9900;
- color:white;
- font-size:16px;
+
+width:35%;
+
+border-radius:30px;
+border:none;
+background:#ff9900;
+color:white;
+font-size:15px;
+
 }
 
 
 .receive{
- display:block;
- margin:20px auto;
- width:70%;
- height:58px;
- border-radius:35px;
- border:none;
- background:#ffc21c;
- color:#754000;
- font-size:24px;
- font-weight:bold;
+
+width:75%;
+height:55px;
+
+margin:18px auto;
+
+display:block;
+
+border-radius:35px;
+
+border:none;
+
+background:#ffc21c;
+
+font-size:24px;
+
+font-weight:bold;
+
+color:#754000;
+
 }
 
 
 .rule{
- background:white;
- margin-top:20px;
- padding:20px;
- border-radius:20px;
- color:#333;
- line-height:1.8;
- font-size:14px;
+
+background:white;
+
+padding:20px;
+
+border-radius:20px;
+
+margin-top:20px;
+
+line-height:1.8;
+
 }
+
 
 
 </style>
@@ -110,28 +145,22 @@ input{
 <div class="form">
 
 
-<input 
-placeholder="请输入手机号"
-id="phone">
+<input placeholder="请输入手机号">
 
 
 <div class="code-box">
 
-<input 
-placeholder="请输入短信验证码"
-id="code">
+<input placeholder="请输入短信验证码">
 
 
-<button class="code-btn"
-onclick="sendCode()">
+<button class="code-btn">
 获取验证码
 </button>
 
 </div>
 
 
-<button class="receive"
-onclick="submitForm()">
+<button class="receive">
 立即领取
 </button>
 
@@ -142,57 +171,31 @@ onclick="submitForm()">
 
 <div class="rule">
 
-<h3>活动规则</h3>
+<h3>
+活动规则
+</h3>
+
 
 <p>
 1. 输入手机号领取权益礼包
 </p>
 
+
 <p>
 2. 每个账号限领取一次
 </p>
 
+
 <p>
-3. 请确保填写信息准确
+3. 请确保信息准确
 </p>
 
 
 </div>
 
 
+
 </div>
-
-
-
-<script>
-
-function sendCode(){
-
-alert("验证码功能待接入短信接口");
-
-}
-
-
-function submitForm(){
-
-let phone=document.getElementById("phone").value;
-
-
-if(phone.length!=11){
-
-alert("请输入正确手机号");
-
-return;
-
-}
-
-
-alert("领取成功");
-
-}
-
-
-</script>
 
 
 </body>
