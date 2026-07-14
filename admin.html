@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>后台管理</title>
+
+
+<style>
+
+body{
+
+background:#0868e8;
+
+font-family:"Microsoft YaHei";
+
+}
+
+
+.box{
+
+width:90%;
+
+max-width:400px;
+
+margin:80px auto;
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+text-align:center;
+
+}
+
+
+input{
+
+width:90%;
+
+height:45px;
+
+margin:10px;
+
+border-radius:20px;
+
+border:1px solid #ddd;
+
+padding-left:15px;
+
+}
+
+
+button{
+
+width:90%;
+
+height:45px;
+
+border:none;
+
+border-radius:20px;
+
+background:#ffb800;
+
+font-size:18px;
+
+}
+
+
+#admin{
+
+display:none;
+
+}
+
+
+.card{
+
+background:#f5f5f5;
+
+padding:10px;
+
+margin:10px;
+
+border-radius:10px;
+
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="box" id="login">
+
+
+<h2>管理员登录</h2>
+
+
+<input id="user" placeholder="账号">
+
+
+<input id="pass" placeholder="密码" type="password">
+
+
+<button onclick="login()">
+
+登录
+
+</button>
+
+
+</div>
+
+
+
+<div class="box" id="admin">
+
+
+<h2>卡密管理</h2>
+
+
+<input id="key" placeholder="输入卡密">
+
+
+<button onclick="addKey()">
+
+添加卡密
+
+</button>
+
+
+<h3>库存列表</h3>
+
+
+<div id="list"></div>
+
+
+</div>
+
+
+
+<script>
+
+
+let keys=[];
+
+
+function login(){
+
+
+let u=document.getElementById("user").value;
+
+let p=document.getElementById("pass").value;
+
+
+
+if(u=="Lme" && p=="719"){
+
+
+document.getElementById("login").style.display="none";
+
+document.getElementById("admin").style.display="block";
+
+
+}else{
+
+
+alert("账号或密码错误");
+
+
+}
+
+
+}
+
+
+
+function addKey(){
+
+
+let k=document.getElementById("key").value;
+
+
+if(k==""){
+
+alert("请输入卡密");
+
+return;
+
+}
+
+
+keys.push(k);
+
+
+show();
+
+
+}
+
+
+
+function show(){
+
+
+let html="";
+
+
+keys.forEach(function(item,index){
+
+
+html +=
+
+"<div class='card'>"+
+
+(item)+
+
+"</div>";
+
+
+});
+
+
+document.getElementById("list").innerHTML=html;
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
